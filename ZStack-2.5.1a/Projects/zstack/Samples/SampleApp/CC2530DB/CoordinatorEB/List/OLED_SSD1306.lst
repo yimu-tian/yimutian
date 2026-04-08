@@ -1,0 +1,783 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         13/Mar/2026  10:09:37 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\Source\OLED_SSD1306.c             #
+#    Command line       =  -f D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wCoord.cfg (-DCPU32MHZ -DROOT=__near_func     #
+#                          -DMAC_CFG_APP_PENDING_QUEUE=TRUE                   #
+#                          -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8         #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\..\..\..\Tools\CC2530 #
+#                          DB\f8wConfig.cfg (-DZIGBEEPRO -DSECURE=0           #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 D:\ZStack-2.5.1a.1\ZStack-2 #
+#                          .5.1a\Projects\zstack\Samples\SampleApp\Source\OLE #
+#                          D_SSD1306.c -D ZTOOL_P1 -D xMT_TASK -D             #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          LCD_SUPPORTED=DEBUG -lC D:\ZStack-2.5.1a.1\ZStack- #
+#                          2.5.1a\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          CoordinatorEB\List\ -lA D:\ZStack-2.5.1a.1\ZStack- #
+#                          2.5.1a\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          CoordinatorEB\List\ --diag_suppress Pe001,Pa010    #
+#                          -o D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\CoordinatorEB\Obj\    #
+#                          -e --no_code_motion --debug --core=plain           #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I D:\ZStack-2.5.1a.1\ZStack- #
+#                          2.5.1a\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                           -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\Source\ -I        #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\ZMain\TI2530DB\ #
+#                           -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zsta #
+#                          ck\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compo #
+#                          nents\hal\include\ -I D:\ZStack-2.5.1a.1\ZStack-2. #
+#                          5.1a\Projects\zstack\Samples\SampleApp\CC2530DB\.. #
+#                          \..\..\..\..\Components\hal\target\CC2530EB\ -I    #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\include\ -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\mac\high_level\ -I             #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\ -I                          #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mac\low_level\srf04\single_chip\ -I              #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\mt\ -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects #
+#                          \zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\ #
+#                          Components\osal\include\ -I                        #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\services\saddr\ -I D:\ZStack-2.5.1a.1\ZStack-2.5 #
+#                          .1a\Projects\zstack\Samples\SampleApp\CC2530DB\..\ #
+#                          ..\..\..\..\Components\services\sdata\ -I          #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\af\ -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Pr #
+#                          ojects\zstack\Samples\SampleApp\CC2530DB\..\..\..\ #
+#                          ..\..\Components\stack\nwk\ -I                     #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\sapi\ -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\stack\sec\ -I                   #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\stack\sys\ -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \..\..\Components\stack\zdo\ -I                    #
+#                          D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\..\..\..\..\..\Component #
+#                          s\zmac\ -I D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projec #
+#                          ts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\. #
+#                          .\Components\zmac\f8w\ -Ohz                        #
+#    List file          =  D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\CoordinatorEB\List\OLED_ #
+#                          SSD1306.lst                                        #
+#    Object file        =  D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\S #
+#                          amples\SampleApp\CC2530DB\CoordinatorEB\Obj\OLED_S #
+#                          SD1306.r51                                         #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\ZStack-2.5.1a.1\ZStack-2.5.1a\Projects\zstack\Samples\SampleApp\Source\OLED_SSD1306.c
+      1          #include "OLED_SSD1306.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      2          #include <string.h>
+      3          
+      4          #define I2C_Delay() asm("NOP"); asm("NOP")
+      5          
+      6          // 8x16 字库（此处仅为示例，请替换为完整字库）
+
+   \                                 In  segment XDATA_ROM_C, align 1
+      7          static const uint8 F8x16[][16] = {
+   \                     F8x16:
+   \   000000   00           DB 0
+   \   000001   00           DB 0
+   \   000002   00           DB 0
+   \   000003   00           DB 0
+   \   000004   00           DB 0
+   \   000005   00           DB 0
+   \   000006   00           DB 0
+   \   000007   00           DB 0
+   \   000008   00           DB 0
+   \   000009   00           DB 0
+   \   00000A   00           DB 0
+   \   00000B   00           DB 0
+   \   00000C   00           DB 0
+   \   00000D   00           DB 0
+   \   00000E   00           DB 0
+   \   00000F   00           DB 0
+      8              {0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}, // 空格
+      9              // ... 实际使用时需补充完整字库
+     10          };
+     11          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     12          static void I2C_Start(void)
+   \                     I2C_Start:
+     13          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     14              OLED_SDA = 1; OLED_SCL = 1; I2C_Delay();
+   \   000000   D291         SETB    0x90.1
+   \   000002   D290         SETB    0x90.0
+   \   000004   00           NOP
+   \   000005   00           NOP
+     15              OLED_SDA = 0; I2C_Delay(); OLED_SCL = 0;
+   \   000006   C291         CLR     0x90.1
+   \   000008   00           NOP
+   \   000009   00           NOP
+   \   00000A   C290         CLR     0x90.0
+     16          }
+   \   00000C   02....       LJMP    ?BRET
+   \   00000F                REQUIRE _A_P1
+     17          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     18          static void I2C_Stop(void)
+   \                     I2C_Stop:
+     19          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     20              OLED_SDA = 0; OLED_SCL = 1; I2C_Delay();
+   \   000000   C291         CLR     0x90.1
+   \   000002   D290         SETB    0x90.0
+   \   000004   00           NOP
+   \   000005   00           NOP
+     21              OLED_SDA = 1;
+   \   000006   D291         SETB    0x90.1
+     22          }
+   \   000008   02....       LJMP    ?BRET
+   \   00000B                REQUIRE _A_P1
+     23          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          static uint8 I2C_WriteByte(uint8 dat)
+   \                     I2C_WriteByte:
+     25          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV     A,R1
+   \   000001   FA           MOV     R2,A
+     26              uint8 i, ack;
+     27              for(i=0; i<8; i++)
+   \   000002   7808         MOV     R0,#0x8
+     28              {
+     29                  OLED_SDA = (dat & 0x80) ? 1 : 0;
+   \                     ??I2C_WriteByte_0:
+   \   000004   EA           MOV     A,R2
+   \   000005   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000007   9291         MOV     0x90.1,C
+     30                  dat <<= 1;
+   \   000009   C3           CLR     C
+   \   00000A   33           RLC     A
+   \   00000B   FA           MOV     R2,A
+     31                  OLED_SCL = 1; I2C_Delay(); OLED_SCL = 0;
+   \   00000C   D290         SETB    0x90.0
+   \   00000E   00           NOP
+   \   00000F   00           NOP
+   \   000010   C290         CLR     0x90.0
+     32              }
+   \   000012   18           DEC     R0
+   \   000013   E8           MOV     A,R0
+   \   000014   70EE         JNZ     ??I2C_WriteByte_0
+     33              OLED_SDA = 1; OLED_SCL = 1; I2C_Delay();
+   \   000016   D291         SETB    0x90.1
+   \   000018   D290         SETB    0x90.0
+   \   00001A   00           NOP
+   \   00001B   00           NOP
+     34              ack = OLED_SDA; OLED_SCL = 0;
+   \   00001C   E590         MOV     A,0x90
+   \   00001E   C290         CLR     0x90.0
+     35              return ack;
+   \   000020   A2E1         MOV     C,0xE0 /* A   */.1
+   \   000022   E4           CLR     A
+   \   000023   33           RLC     A
+   \   000024   F9           MOV     R1,A
+   \   000025   02....       LJMP    ?BRET
+   \   000028                REQUIRE _A_P1
+     36          }
+     37          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     38          static void OLED_WriteCmd(uint8 cmd)
+   \                     OLED_WriteCmd:
+     39          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   12....       LCALL   ?Subroutine3 & 0xFFFF
+     40              I2C_Start();
+     41              I2C_WriteByte(0x78);
+     42              I2C_WriteByte(0x00);
+   \                     ??CrossCallReturnLabel_5:
+   \   000008                ; Setup parameters for call to function I2C_WriteByte
+   \   000008   7900         MOV     R1,#0x0
+   \   00000A   80..         SJMP    ?Subroutine0
+     43              I2C_WriteByte(cmd);
+     44              I2C_Stop();
+     45          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   E9           MOV     A,R1
+   \   000001   FE           MOV     R6,A
+   \   000002                ; Setup parameters for call to function I2C_Start
+   \   000002                ; Setup parameters for call to function I2C_Start
+   \   000002   12....       LCALL   ??I2C_Start?relay
+   \   000005                ; Setup parameters for call to function I2C_WriteByte
+   \   000005                ; Setup parameters for call to function I2C_WriteByte
+   \   000005   7978         MOV     R1,#0x78
+   \   000007   12....       LCALL   ??I2C_WriteByte?relay
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL   ??I2C_WriteByte?relay
+   \   000003                ; Setup parameters for call to function I2C_WriteByte
+   \   000003                ; Setup parameters for call to function I2C_WriteByte
+   \   000003   EE           MOV     A,R6
+   \   000004   F9           MOV     R1,A
+   \   000005   12....       LCALL   ??I2C_WriteByte?relay
+   \   000008                ; Setup parameters for call to function I2C_Stop
+   \   000008                ; Setup parameters for call to function I2C_Stop
+   \   000008   12....       LCALL   ??I2C_Stop?relay
+   \   00000B                REQUIRE ??Subroutine4_0
+   \   00000B                ; // Fall through to label ??Subroutine4_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine4_0:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     46          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     47          static void OLED_WriteData(uint8 dat)
+   \                     OLED_WriteData:
+     48          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   12....       LCALL   ?Subroutine3 & 0xFFFF
+     49              I2C_Start();
+     50              I2C_WriteByte(0x78);
+     51              I2C_WriteByte(0x40);
+   \                     ??CrossCallReturnLabel_6:
+   \   000008                ; Setup parameters for call to function I2C_WriteByte
+   \   000008   7940         MOV     R1,#0x40
+   \   00000A   80..         SJMP    ?Subroutine0
+     52              I2C_WriteByte(dat);
+     53              I2C_Stop();
+     54          }
+     55          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     56          static void OLED_SetPos(uint8 x, uint8 y)
+   \                     OLED_SetPos:
+     57          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+     58              OLED_WriteCmd(0xB0 + y);
+   \   000009                ; Setup parameters for call to function OLED_WriteCmd
+   \   000009   74B0         MOV     A,#-0x50
+   \   00000B   2F           ADD     A,R7
+   \   00000C   F9           MOV     R1,A
+   \   00000D   12....       LCALL   ??OLED_WriteCmd?relay
+     59              OLED_WriteCmd(((x & 0xF0) >> 4) | 0x10);
+   \   000010                ; Setup parameters for call to function OLED_WriteCmd
+   \   000010   EE           MOV     A,R6
+   \   000011   C4           SWAP    A
+   \   000012   540F         ANL     A,#0xf
+   \   000014   4410         ORL     A,#0x10
+   \   000016   F9           MOV     R1,A
+   \   000017   12....       LCALL   ??OLED_WriteCmd?relay
+     60              OLED_WriteCmd(x & 0x0F);
+   \   00001A                ; Setup parameters for call to function OLED_WriteCmd
+   \   00001A   740F         MOV     A,#0xf
+   \   00001C   5E           ANL     A,R6
+   \   00001D   F9           MOV     R1,A
+   \   00001E   12....       LCALL   ??OLED_WriteCmd?relay
+     61          }
+   \   000021   80..         SJMP    ??Subroutine4_0
+     62          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     63          void OLED_Init(void)
+   \                     OLED_Init:
+     64          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     65              P1DIR |= 0x03; // P1_0,P1_1 输出
+   \   000004   43FE03       ORL     0xfe,#0x3
+     66              OLED_SCL = 0; OLED_SDA = 0;
+   \   000007   C290         CLR     0x90.0
+   \   000009   C291         CLR     0x90.1
+     67          
+     68              OLED_WriteCmd(0xAE); OLED_WriteCmd(0xD5); OLED_WriteCmd(0x80);
+   \   00000B                ; Setup parameters for call to function OLED_WriteCmd
+   \   00000B   79AE         MOV     R1,#-0x52
+   \   00000D   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000010                ; Setup parameters for call to function OLED_WriteCmd
+   \   000010   79D5         MOV     R1,#-0x2b
+   \   000012   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000015                ; Setup parameters for call to function OLED_WriteCmd
+   \   000015   7980         MOV     R1,#-0x80
+   \   000017   12....       LCALL   ??OLED_WriteCmd?relay
+     69              OLED_WriteCmd(0xA8); OLED_WriteCmd(0x3F); OLED_WriteCmd(0xD3);
+   \   00001A                ; Setup parameters for call to function OLED_WriteCmd
+   \   00001A   79A8         MOV     R1,#-0x58
+   \   00001C   12....       LCALL   ??OLED_WriteCmd?relay
+   \   00001F                ; Setup parameters for call to function OLED_WriteCmd
+   \   00001F   793F         MOV     R1,#0x3f
+   \   000021   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000024                ; Setup parameters for call to function OLED_WriteCmd
+   \   000024   79D3         MOV     R1,#-0x2d
+   \   000026   12....       LCALL   ?Subroutine2 & 0xFFFF
+     70              OLED_WriteCmd(0x00); OLED_WriteCmd(0x40); OLED_WriteCmd(0x8D);
+   \                     ??CrossCallReturnLabel_2:
+   \   000029                ; Setup parameters for call to function OLED_WriteCmd
+   \   000029   7940         MOV     R1,#0x40
+   \   00002B   12....       LCALL   ??OLED_WriteCmd?relay
+   \   00002E                ; Setup parameters for call to function OLED_WriteCmd
+   \   00002E   798D         MOV     R1,#-0x73
+   \   000030   12....       LCALL   ??OLED_WriteCmd?relay
+     71              OLED_WriteCmd(0x14); OLED_WriteCmd(0x20); OLED_WriteCmd(0x00);
+   \   000033                ; Setup parameters for call to function OLED_WriteCmd
+   \   000033   7914         MOV     R1,#0x14
+   \   000035   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000038                ; Setup parameters for call to function OLED_WriteCmd
+   \   000038   7920         MOV     R1,#0x20
+   \   00003A   12....       LCALL   ?Subroutine2 & 0xFFFF
+     72              OLED_WriteCmd(0xA1); OLED_WriteCmd(0xC8); OLED_WriteCmd(0xDA);
+   \                     ??CrossCallReturnLabel_3:
+   \   00003D                ; Setup parameters for call to function OLED_WriteCmd
+   \   00003D   79A1         MOV     R1,#-0x5f
+   \   00003F   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000042                ; Setup parameters for call to function OLED_WriteCmd
+   \   000042   79C8         MOV     R1,#-0x38
+   \   000044   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000047                ; Setup parameters for call to function OLED_WriteCmd
+   \   000047   79DA         MOV     R1,#-0x26
+   \   000049   12....       LCALL   ??OLED_WriteCmd?relay
+     73              OLED_WriteCmd(0x12); OLED_WriteCmd(0x81); OLED_WriteCmd(0xCF);
+   \   00004C                ; Setup parameters for call to function OLED_WriteCmd
+   \   00004C   7912         MOV     R1,#0x12
+   \   00004E   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000051                ; Setup parameters for call to function OLED_WriteCmd
+   \   000051   7981         MOV     R1,#-0x7f
+   \   000053   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000056                ; Setup parameters for call to function OLED_WriteCmd
+   \   000056   79CF         MOV     R1,#-0x31
+   \   000058   12....       LCALL   ??OLED_WriteCmd?relay
+     74              OLED_WriteCmd(0xD9); OLED_WriteCmd(0xF1); OLED_WriteCmd(0xDB);
+   \   00005B                ; Setup parameters for call to function OLED_WriteCmd
+   \   00005B   79D9         MOV     R1,#-0x27
+   \   00005D   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000060                ; Setup parameters for call to function OLED_WriteCmd
+   \   000060   79F1         MOV     R1,#-0xf
+   \   000062   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000065                ; Setup parameters for call to function OLED_WriteCmd
+   \   000065   79DB         MOV     R1,#-0x25
+   \   000067   12....       LCALL   ??OLED_WriteCmd?relay
+     75              OLED_WriteCmd(0x40); OLED_WriteCmd(0xA4); OLED_WriteCmd(0xA6);
+   \   00006A                ; Setup parameters for call to function OLED_WriteCmd
+   \   00006A   7940         MOV     R1,#0x40
+   \   00006C   12....       LCALL   ??OLED_WriteCmd?relay
+   \   00006F                ; Setup parameters for call to function OLED_WriteCmd
+   \   00006F   79A4         MOV     R1,#-0x5c
+   \   000071   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000074                ; Setup parameters for call to function OLED_WriteCmd
+   \   000074   79A6         MOV     R1,#-0x5a
+   \   000076   12....       LCALL   ??OLED_WriteCmd?relay
+     76              OLED_WriteCmd(0x2E); OLED_WriteCmd(0xAF);
+   \   000079                ; Setup parameters for call to function OLED_WriteCmd
+   \   000079   792E         MOV     R1,#0x2e
+   \   00007B   12....       LCALL   ??OLED_WriteCmd?relay
+   \   00007E                ; Setup parameters for call to function OLED_WriteCmd
+   \   00007E   79AF         MOV     R1,#-0x51
+   \   000080   12....       LCALL   ??OLED_WriteCmd?relay
+     77              OLED_Clear();
+   \   000083                ; Setup parameters for call to function OLED_Clear
+   \   000083   12....       LCALL   ??OLED_Clear?relay
+     78          }
+   \   000086   D083         POP     DPH
+   \   000088   D082         POP     DPL
+   \   00008A   02....       LJMP    ?BRET
+   \   00008D                REQUIRE P1DIR
+   \   00008D                REQUIRE _A_P1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000003                ; Setup parameters for call to function OLED_WriteCmd
+   \   000003                ; Setup parameters for call to function OLED_WriteCmd
+   \   000003                ; Setup parameters for call to function OLED_WriteCmd
+   \   000003   7900         MOV     R1,#0x0
+   \   000005   12....       LCALL   ??OLED_WriteCmd?relay
+   \   000008   22           RET
+     79          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     80          void OLED_Clear(void)
+   \                     OLED_Clear:
+     81          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+     82              for(uint8 i=0; i<8; i++)
+   \   000005   7F00         MOV     R7,#0x0
+     83              {
+     84                  OLED_WriteCmd(0xB0 + i);
+   \                     ??OLED_Clear_0:
+   \   000007                ; Setup parameters for call to function OLED_WriteCmd
+   \   000007   74B0         MOV     A,#-0x50
+   \   000009   2F           ADD     A,R7
+   \   00000A   F9           MOV     R1,A
+   \   00000B   12....       LCALL   ?Subroutine2 & 0xFFFF
+     85                  OLED_WriteCmd(0x00);
+     86                  OLED_WriteCmd(0x10);
+   \                     ??CrossCallReturnLabel_4:
+   \   00000E                ; Setup parameters for call to function OLED_WriteCmd
+   \   00000E   7910         MOV     R1,#0x10
+   \   000010   12....       LCALL   ??OLED_WriteCmd?relay
+     87                  for(uint8 j=0; j<128; j++) OLED_WriteData(0x00);
+   \   000013   7E80         MOV     R6,#-0x80
+   \                     ??OLED_Clear_1:
+   \   000015                ; Setup parameters for call to function OLED_WriteData
+   \   000015   7900         MOV     R1,#0x0
+   \   000017   12....       LCALL   ??OLED_WriteData?relay
+   \   00001A   1E           DEC     R6
+   \   00001B   EE           MOV     A,R6
+   \   00001C   70F7         JNZ     ??OLED_Clear_1
+     88              }
+   \   00001E   0F           INC     R7
+   \   00001F   EF           MOV     A,R7
+   \   000020   C3           CLR     C
+   \   000021   9408         SUBB    A,#0x8
+   \   000023   40E2         JC      ??OLED_Clear_0
+     89          }
+   \   000025   02....       LJMP    ??Subroutine4_0 & 0xFFFF
+     90          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     91          void OLED_ShowString(uint8 x, uint8 y, char *str)
+   \                     OLED_ShowString:
+     92          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   8A..         MOV     ?V0 + 1,R2
+   \   000009   EC           MOV     A,R4
+   \   00000A   FE           MOV     R6,A
+   \   00000B   ED           MOV     A,R5
+   \   00000C   FF           MOV     R7,A
+     93              while(*str)
+   \                     ??OLED_ShowString_0:
+   \   00000D   8E82         MOV     DPL,R6
+   \   00000F   8F83         MOV     DPH,R7
+   \   000011   E0           MOVX    A,@DPTR
+   \   000012   6065         JZ      ??OLED_ShowString_1
+     94              {
+     95                  uint8 c = (*str) - 32;
+   \   000014   24E0         ADD     A,#-0x20
+   \   000016   F5..         MOV     ?V0 + 7,A
+     96                  if(c > 95) c = 0;
+   \   000018   C3           CLR     C
+   \   000019   9460         SUBB    A,#0x60
+   \   00001B   4003         JC      ??OLED_ShowString_2
+   \   00001D   75..00       MOV     ?V0 + 7,#0x0
+     97                  OLED_SetPos(x, y);
+   \                     ??OLED_ShowString_2:
+   \   000020                ; Setup parameters for call to function OLED_SetPos
+   \   000020   AA..         MOV     R2,?V0 + 1
+   \   000022   A9..         MOV     R1,?V0 + 0
+   \   000024   12....       LCALL   ??OLED_SetPos?relay
+     98                  for(uint8 j=0; j<8; j++) OLED_WriteData(F8x16[c][j]);
+   \   000027   75..00       MOV     ?V0 + 6,#0x0
+   \                     ??OLED_ShowString_3:
+   \   00002A                ; Setup parameters for call to function OLED_WriteData
+   \   00002A   85....       MOV     ?V0 + 2,?V0 + 6
+   \   00002D   85....       MOV     ?V0 + 4,?V0 + 7
+   \   000030   75..00       MOV     ?V0 + 5,#0x0
+   \   000033   7404         MOV     A,#0x4
+   \   000035   78..         MOV     R0,#?V0 + 4
+   \   000037   12....       LCALL   ?S_SHL
+   \   00003A   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   00003D   9408         SUBB    A,#0x8
+   \   00003F   40E9         JC      ??OLED_ShowString_3
+     99                  OLED_SetPos(x, y+1);
+   \   000041                ; Setup parameters for call to function OLED_SetPos
+   \   000041   7401         MOV     A,#0x1
+   \   000043   25..         ADD     A,?V0 + 1
+   \   000045   FA           MOV     R2,A
+   \   000046   A9..         MOV     R1,?V0 + 0
+   \   000048   12....       LCALL   ??OLED_SetPos?relay
+    100                  for(uint8 j=8; j<16; j++) OLED_WriteData(F8x16[c][j]);
+   \   00004B   75..08       MOV     ?V0 + 6,#0x8
+   \                     ??OLED_ShowString_4:
+   \   00004E                ; Setup parameters for call to function OLED_WriteData
+   \   00004E   85....       MOV     ?V0 + 2,?V0 + 6
+   \   000051   85....       MOV     ?V0 + 4,?V0 + 7
+   \   000054   75..00       MOV     ?V0 + 5,#0x0
+   \   000057   7404         MOV     A,#0x4
+   \   000059   78..         MOV     R0,#?V0 + 4
+   \   00005B   12....       LCALL   ?S_SHL
+   \   00005E   12....       LCALL   ?Subroutine1 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   000061   9410         SUBB    A,#0x10
+   \   000063   40E9         JC      ??OLED_ShowString_4
+    101                  x += 8; str++;
+   \   000065   7408         MOV     A,#0x8
+   \   000067   25..         ADD     A,?V0 + 0
+   \   000069   F5..         MOV     ?V0 + 0,A
+   \   00006B   8E82         MOV     DPL,R6
+   \   00006D   8F83         MOV     DPH,R7
+   \   00006F   A3           INC     DPTR
+   \   000070   AE82         MOV     R6,DPL
+   \   000072   AF83         MOV     R7,DPH
+    102                  if(x > 120) break;
+   \   000074   C3           CLR     C
+   \   000075   9479         SUBB    A,#0x79
+   \   000077   4094         JC      ??OLED_ShowString_0
+    103              }
+    104          }
+   \                     ??OLED_ShowString_1:
+   \   000079   7F08         MOV     R7,#0x8
+   \   00007B   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   74..         MOV     A,#F8x16 & 0xff
+   \   000002   25..         ADD     A,?V0 + 4
+   \   000004   F8           MOV     R0,A
+   \   000005   74..         MOV     A,#(F8x16 >> 8) & 0xff
+   \   000007   35..         ADDC    A,?V0 + 5
+   \   000009   F9           MOV     R1,A
+   \   00000A   E8           MOV     A,R0
+   \   00000B   25..         ADD     A,?V0 + 2
+   \   00000D   F582         MOV     DPL,A
+   \   00000F   E9           MOV     A,R1
+   \   000010   3400         ADDC    A,#0x0
+   \   000012   F583         MOV     DPH,A
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   F9           MOV     R1,A
+   \   000016   12....       LCALL   ??OLED_WriteData?relay
+   \   000019   05..         INC     ?V0 + 6
+   \   00001B   E5..         MOV     A,?V0 + 6
+   \   00001D   C3           CLR     C
+   \   00001E   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??I2C_WriteByte?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    I2C_WriteByte
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OLED_WriteCmd?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OLED_WriteCmd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OLED_WriteData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OLED_WriteData
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OLED_SetPos?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OLED_SetPos
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OLED_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OLED_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OLED_Clear?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OLED_Clear
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??OLED_ShowString?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    OLED_ShowString
+
+   Maximum stack usage in bytes:
+
+     Function            ISTACK PSTACK XSTACK
+     --------            ------ ------ ------
+     I2C_Start               0      0      9
+     I2C_Stop                0      0      9
+     I2C_WriteByte           0      0      9
+     OLED_Clear              0      0      9
+       -> OLED_WriteCmd      0      0     18
+       -> OLED_WriteCmd      0      0     18
+       -> OLED_WriteCmd      0      0     18
+       -> OLED_WriteData     0      0     18
+     OLED_Init               2      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_WriteCmd      4      0      0
+       -> OLED_Clear         4      0      0
+     OLED_SetPos             0      0     25
+       -> OLED_WriteCmd      0      0     18
+       -> OLED_WriteCmd      0      0     18
+       -> OLED_WriteCmd      0      0     18
+     OLED_ShowString         0      0     16
+       -> OLED_SetPos        0      0     32
+       -> OLED_WriteData     0      0     32
+       -> OLED_SetPos        0      0     32
+       -> OLED_WriteData     0      0     32
+     OLED_WriteCmd           0      0     18
+       -> I2C_Start          0      0     18
+       -> I2C_WriteByte      0      0     18
+       -> I2C_WriteByte      0      0     18
+       -> I2C_WriteByte      0      0     18
+       -> I2C_Stop           0      0     18
+     OLED_WriteData          0      0     25
+       -> I2C_Start          0      0     18
+       -> I2C_WriteByte      0      0     18
+       -> I2C_WriteByte      0      0     18
+       -> I2C_WriteByte      0      0     18
+       -> I2C_Stop           0      0     18
+
+
+   Segment part sizes:
+
+     Function/Label          Bytes
+     --------------          -----
+     _A_P1                      1
+     P1DIR                      1
+     F8x16                     16
+     I2C_Start                 15
+     I2C_Stop                  11
+     I2C_WriteByte             40
+     OLED_WriteCmd             12
+     ?Subroutine3              11
+     ?Subroutine0              11
+     ??Subroutine4_0            5
+     OLED_WriteData            12
+     OLED_SetPos               35
+     OLED_Init                141
+     ?Subroutine2               9
+     OLED_Clear                40
+     OLED_ShowString          126
+     ?Subroutine1              31
+     ??I2C_Start?relay          6
+     ??I2C_Stop?relay           6
+     ??I2C_WriteByte?relay      6
+     ??OLED_WriteCmd?relay      6
+     ??OLED_WriteData?relay     6
+     ??OLED_SetPos?relay        6
+     ??OLED_Init?relay          6
+     ??OLED_Clear?relay         6
+     ??OLED_ShowString?relay    6
+
+ 
+ 499 bytes in segment BANKED_CODE
+  54 bytes in segment BANK_RELAYS
+   2 bytes in segment SFR_AN
+  16 bytes in segment XDATA_ROM_C
+ 
+ 553 bytes of CODE  memory
+  16 bytes of CONST memory
+   0 bytes of DATA  memory (+ 2 bytes shared)
+
+Errors: none
+Warnings: none
